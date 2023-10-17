@@ -1,1 +1,2 @@
-Powershell.exe -Command "& {Start-Process Powershell.exe -Verb RunAs -File '%~dp0DefaultsAndRemoval.exe'}"
+Powershell.exe -noprofile -ExecutionPolicy Bypass -NoExit -Command "&{Start-Process Powershell.exe -File '\"%~dp0DefaultsAndRemoval.exe\"' -Verb RunAs}"
+
