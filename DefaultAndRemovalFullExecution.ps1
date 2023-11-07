@@ -19,6 +19,7 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     Get-AppxPackage SpotifyAB.SpotifyMusic | Remove-AppxPackage;
     Get-AppxPackage Microsoft.GamingApp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.Xbox.TCUI | Remove-AppxPackage;
+    Get-AppxPackage Microsoft.XboxApp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.MicrosoftOfficeHub | Remove-AppxPackage;
 };
 Wait-Job $ProcessJob;
