@@ -12,7 +12,7 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     SetUserFTA .HTM ChromeHTML;
     SetUserFTA MAILTO Outlook.URL.mailto.15;
     SetUserFTA .EML Outlook.URL.mailto.15;
-    SetUserFTA .PDF AcroExch.Document.DC;
+    SetUserFTA .PDF Acrobat.Document.DC;
     Get-AppxPackage ClipChamp.Clipchamp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.ZuneVideo | Remove-AppxPackage;
     Get-AppxPackage Microsoft.MicrosoftSolitaireCollection | Remove-AppxPackage;
