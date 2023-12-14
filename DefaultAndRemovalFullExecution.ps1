@@ -22,6 +22,8 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     Get-AppxPackage Microsoft.XboxApp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.MicrosoftOfficeHub | Remove-AppxPackage;
     Get-AppxPackage 5A894077.McAfeeSecurity | Remove-AppxPackage;
+    Get-AppxPackage Microsoft.ScreenSketch | Remove-AppxPackage;
+    Get-AppxPackage Microsoft.MixedReality.Portal | Remove-AppxPackage;
 };
 Wait-Job $ProcessJob;
 Get-Job;
