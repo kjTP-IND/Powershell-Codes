@@ -28,7 +28,6 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
 Wait-Job $ProcessJob;
 Get-Job;
 #As ADMIN
-Remove-Item "C:\Users\public\Desktop\Microsoft Edge.lnk" -Force -Verbose
 choco uninstall setuserfta -Force;
 remove-item 'C:\ProgramData\chocolatey\' -Recurse -Force -Confirm:$False; 
 remove-item 'C:\ProgramData\ChocolateyHttpCache\' -Recurse -Force -Confirm:$False;
