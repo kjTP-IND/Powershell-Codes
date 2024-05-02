@@ -3,7 +3,9 @@
 Set-ExecutionPolicy bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 choco install setuserfta -Force -Confirm:$False;
-$Credentials = Get-Credential
+$username = '@username@'
+$password = '@password@'
+$Credentials = New-Object System.Management.Automation.PSCredential ($username, $password)
 #AS Local User
 $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     SetUserFTA HTTP ChromeHTML;
