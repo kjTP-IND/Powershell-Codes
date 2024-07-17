@@ -9,7 +9,7 @@ $USERNAME = 'kjadmin'
 $ObjLocalUser = $null
 
 #Password
-$Password = 'kjKJ513920'
+$Password = ConvertTo-SecureString 'kjKJ513920' -AsPlainText -Force
 
 try {
     Write-Verbose "Searching for $($USERNAME) in LocalUser DataBase."
