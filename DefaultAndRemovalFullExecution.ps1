@@ -3,7 +3,9 @@
 Set-ExecutionPolicy bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 choco install setuserfta -Force -Confirm:$False;
-$Credentials = Get-Credential
+$username = '@username@'
+$password = '@password@'
+$Credentials = New-Object System.Management.Automation.PSCredential ($username, $password)
 #AS Local User
 $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     SetUserFTA HTTP ChromeHTML;
@@ -12,7 +14,7 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     SetUserFTA .HTM ChromeHTML;
     SetUserFTA MAILTO Outlook.URL.mailto.15;
     SetUserFTA .EML Outlook.URL.mailto.15;
-    SetUserFTA .PDF AcroExch.Document.DC;
+    SetUserFTA .PDF Acrobat.Document.DC;
     Get-AppxPackage ClipChamp.Clipchamp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.ZuneVideo | Remove-AppxPackage;
     Get-AppxPackage Microsoft.MicrosoftSolitaireCollection | Remove-AppxPackage;
@@ -21,6 +23,9 @@ $ProcessJob = Start-Job -Credential $Credentials -ScriptBlock {
     Get-AppxPackage Microsoft.Xbox.TCUI | Remove-AppxPackage;
     Get-AppxPackage Microsoft.XboxApp | Remove-AppxPackage;
     Get-AppxPackage Microsoft.MicrosoftOfficeHub | Remove-AppxPackage;
+    Get-AppxPackage 5A894077.McAfeeSecurity | Remove-AppxPackage;
+    Get-AppxPackage Microsoft.ScreenSketch | Remove-AppxPackage;
+    Get-AppxPackage Microsoft.MixedReality.Portal | Remove-AppxPackage;
 };
 Wait-Job $ProcessJob;
 Get-Job;

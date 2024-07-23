@@ -13,3 +13,7 @@ Get-AppxPackage Microsoft.GamingApp | Remove-AppxPackage;
 Get-AppxPackage Microsoft.Xbox.TCUI | Remove-AppxPackage;
 Get-AppxPackage Microsoft.XboxApp | Remove-AppxPackage;
 Get-AppxPackage Microsoft.MicrosoftOfficeHub | Remove-AppxPackage;
+Get-AppxPackage Microsoft.ScreenSketch | Remove-AppxPackage;
+Get-AppxPackage Microsoft.MixedReality.Portal | Remove-AppxPackage;
+Get-AppxPackage 5A894077.McAfeeSecurity | Remove-AppxPackage;
+
