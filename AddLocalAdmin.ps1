@@ -24,10 +24,9 @@ catch {
     Exit #Stop Powershell
 }
 
-
 #Create the user if not found
 if (!$ObjLocalUser) {
     Write-Verbose "Creating user $($USERNAME)"
-    New-LocalUser -Name 'kjadmin' -Password $Password
-    Add-LocalGroupMember -Group "Administrators" -Member 'kjadmin'
+    New-LocalUser -Name $USERNAME -Password $Password
+    Add-LocalGroupMember -Group "Administrators" -Member $USERNAME
 }
